@@ -1,0 +1,134 @@
+<%- include header.ejs %>
+    <body>
+    <!-- ClickTale Top part -->
+    <script type="text/javascript">
+        var WRInitTime=(new Date()).getTime();
+    </script>
+    <!-- ClickTale end of Top part -->
+
+        <%- include nav.ejs %>
+
+        <!-- Application container. -->
+        <main role="main" id="main"></main>
+
+        <!-- Application source. -->
+        <!-- build:[src] /source.min.js -->
+
+        <script data-main="/app/main" src="/js/libs/requirejs/require.js"></script>
+        <!-- /build -->
+
+        <!-- Map Canvas -->
+        <div id="map-canvas"></div>
+
+        <div id="view"></div>
+
+        <div id="search"></div>
+        <div id="add_cla-button" class="hidden-xs">
+            <a href="/create" class="btn btn-success input-lg" style="line-height:32px">
+                <span class="glyphicon glyphicon-plus"></span> Add Advertisement
+            </a>
+        </div>
+    <!--<div id="terms">
+
+    </div> -->
+
+    <div id="disclaimer">
+        <span class="glyphicon glyphicon-warning-sign"></span> The advertisements currently displayed are not real. (click to close)
+    </div>
+
+        <!-- Jquery SerializeObject -->
+        <script>
+            $.fn.serializeObject = function() {
+            // $.prototype.serializeObject = function() {
+                var o = {};
+                var a = this.serializeArray();
+                $.each(a, function() {
+                    if (o[this.name] !== undefined) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+            };
+
+            $("#disclaimer").on('click', function(){
+                $("#disclaimer").hide();
+            })
+        </script>
+
+        <!-- Bootstrap Tour -->
+        <script>
+            var exp1 = '<div class="col-md-3"><img src="/img/markers/ad.png"></div>' +
+                    '<div class="col-md-9">Click on markers to view advertisements.</div>';
+            var exp2 = '<div class="col-md-3"><img src="/img/markers/ad_starred.png"></div>' +
+                    '<div class="col-md-9">When you are logged in, you can save ads by starring them.</div>';
+            var tour = new Tour({
+                steps: [
+                    {
+                        element: "#global-search",
+                        title: "Search",
+                        content: "Looking for anything in particular? Use the search bar to get a list of relevant advertisements. You can also search for places",
+                        placement: "bottom"
+                    },
+                    {
+                        element: "#me",
+                        title: "My Advertisements",
+                        content: "Click here to get a list of the advertisements you created.",
+                        placement: "bottom"
+                    },
+                    {
+                        element: "#starred",
+                        title: "Starred Advertisements",
+                        content: "Get a quick overview of your favorite advertisements.",
+                        placement: "bottom"
+                    },
+                    {
+                        element: "#map-canvas",
+                        title: "Map View",
+                        content: exp1,
+                        placement: "top"
+                    },
+
+                    {
+                        element: "#map-canvas",
+                        title: "Map View",
+                        content: exp2,
+                        placement: "top"
+                    }
+                ]});
+
+            // Initialize the tour
+            tour.init();
+
+            // Start the tour
+            tour.start();
+        </script>
+
+        <!-- Google Analytics -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-49909769-1', 'adify.be');
+            ga('send', 'pageview');
+        </script>
+
+
+        <!-- ClickTale Bottom part -->
+
+        <script type='text/javascript'>
+            document.write(unescape("%3Cscript%20src='"+
+                    (document.location.protocol=='https:'?
+                            "https://cdnssl.clicktale.net/www07/ptc/a00e646b-0e7c-4ed2-8e2f-44f932947458.js":
+                            "http://cdn.clicktale.net/www07/ptc/a00e646b-0e7c-4ed2-8e2f-44f932947458.js")+"'%20type='text/javascript'%3E%3C/script%3E"));
+        </script>
+
+        <!-- ClickTale end of Bottom part -->
+    </body>
+</html>

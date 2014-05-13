@@ -1,0 +1,130 @@
+<div id="overlay">
+    <div class="container content" id="create_classified">
+        <div class="row">
+            <div class=" col-md-offset-2 col-md-8">
+                <div class="contentbox">
+                    <div class="close-dialog">
+                        <a href="/">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                    </div>
+                    <h2>Add Advertisement</h2>
+                    <hr>
+                    <form role="form" id="create-form">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-12 cla-image">
+                                        <div id="upload-animation"></div>
+                                        <span class="glyphicon glyphicon-camera upload-plus"
+                                              style="z-index:4;position:relative;"></span>
+                                    </div>
+                                    <!-- col-md-12 cla-image -->
+
+                                    <form method='post' id="upload-image" action='upload' enctype='multipart/form-data'>
+                                        <input type="file" id="upload" name="image"
+                                               style="visibility: hidden; width: 1px; height: 1px"/>
+                                    </form>
+                                    <input type="hidden" id="image-name" name=image_name"/>
+
+                                </div>
+                                <!-- col-md-12 -->
+                            </div>
+                            <!-- row -->
+                        </div>
+                        <!-- form-group -->
+
+                        <div class="row">
+                            <div class="col-md-12 form-result">
+                                <!-- placeholder for error message -->
+                            </div>
+                            <!-- col-md-12 form-results -->
+                        </div>
+                        <!-- row -->
+
+                        <div class="form-group">
+                            <input type="text" id="ad-title" name="ad-title" class="form-control" placeholder="Title"/>
+                        </div>
+                        <!-- /form-group-->
+
+                        <div class="form-group">
+                            <textarea class="form-control" id="ad-desc" rows="4" placeholder="Description"></textarea>
+                        </div>
+                        <!-- /form-group -->
+
+
+                        <div class="row">
+                            <div class="col-md-12 form-contact-result">
+                                <!-- placeholder for error message -->
+                            </div>
+                        </div>
+
+                        <div class="input-group margin-15-bottom">
+                            <!--<div class="col-md-12"> -->
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="button" id="btn-user-contact"><span
+                                    class="glyphicon glyphicon-user"></span></button>
+                    </span>
+                            <input type="text" class="form-control" placeholder="Contactinformation (email, phone...)"
+                                   id="user-contact">
+                            <!--</div><!-- col-md-12 -->
+                        </div>
+                        <!-- input-group margin-15 -->
+
+
+                        <div class="row">
+                            <div class="col-md-12 form-addr-result">
+                                <!-- placeholder for error message -->
+                            </div>
+                        </div>
+
+                        <div class="input-group margin-15-bottom">
+                            <!--<div class="col-md-12"> -->
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-success" type="button" id="btn-user-addr"><span
+                                                    class="glyphicon glyphicon-user"></span></button>
+                    </span>
+                            <input type="text" class="form-control" id="user-addr" placeholder="Type your address">
+                            <!--</div><!-- col-md-12 -->
+                    <span class="input-group-btn">
+                    <button class="btn btn-success" type="button" id="look-up"><span
+                            class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                        </div>
+                        <!-- input-group margin-15 -->
+
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="mini-map" class="col-md-12"></div>
+                                    <input type="hidden" id="latitude"/>
+                                    <input type="hidden" id="longitude"/>
+                                </div>
+                                <!--col-md-12 -->
+
+                            </div>
+                            <!-- row -->
+                        </div>
+                        <!-- form-group -->
+
+                        <div class="row">
+                            <div class="col-md-offset-8 col-md-4">
+                                <button type="submit" class="btn col-md-12 btn-success" id="btn-create">
+                                    Add Advertisement
+                                </button>
+                            </div>
+                            <!-- /col-md-offset-8 col-md-4 -->
+                        </div>
+                        <!-- row -->
+
+                    </form>
+                </div>
+                <!-- /col-md-12 contentbox -->
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container.content -->
+</div>
+

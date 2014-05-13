@@ -1,0 +1,21 @@
+{
+  "name": "Adify",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "express-session": "*",
+    "morgan": "*",
+    "body-parser": "*",
+    "ejs": "*",
+    "mongodb": "*",
+    "mongoskin": "*",
+    "passport": "*",
+    "passport-twitter": "*",
+    "passport-facebook": "*",
+    "formidable": "*",
+    "gm": "*"
+  }
+}

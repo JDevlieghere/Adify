@@ -1,0 +1,15 @@
+{
+    "name": "Adify",
+    "version": "1.0.0",
+    "dependencies": {
+        "bootstrap-sass": "*",
+        "backbone": "*",
+        "bootstrap-tour": "*",
+        "nprogress": "*",
+        "ejs": "*",
+        "jquery": "*",
+        "requirejs": "*",
+        "requirejs-text": "*",
+        "underscore": "*"
+    }
+}

@@ -1,0 +1,60 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="z-index:25">
+    <div class="container-fluid">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <!-- Hamburger -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+            </button>
+            <!-- Hamburger -->
+
+            <a class="navbar-brand brand-logo" href="/"><img src="/img/logo.svg" class="nav-logo" alt="Adify" /> Adify</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-main">
+
+            <!-- search -->
+            <form class="navbar-form navbar-left " role="search">
+
+                <div class="form-group" id="global-search-group">
+                    <input type="text" class="form-control home-search" id="global-search" placeholder="Search for advertisements or places..." autocomplete="off">
+                </div>
+
+                <button type="submit" class="btn btn-success">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+
+            </form>
+            <!-- search -->
+			<ul class="nav navbar-nav navbar-right" >
+                <li class="visible-xs"><a href="/create"><span class="glyphicon glyphicon-plus icon-nav"></span> Add Advertisement</a></li>
+                <li><a href="/me" id="me"><span class="glyphicon glyphicon-inbox icon-nav"></span> My Ads</a></li>
+                <li><a href="/starred" id="starred"><span class="glyphicon glyphicon-star icon-nav"></span> Starred Ads</a></li>
+                <% if(user != null) { %>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" id="user_name"><span class="glyphicon glyphicon-user icon-nav"></span> <%= user.name %><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/profile" id="profile"> My Profile </a></li>
+                        <li class="divider"></li>
+                        <li><a href="/logout"  data-bypass="true" id="logout">Logout</a></li>
+                    </ul>
+                </li>
+                <% } else { %>
+                <li><a href="/welcome"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                <% } %>
+            </ul><!-- nav navbar-nav navbar-right -->
+
+        </div><!-- /.navbar-collapse -->
+
+    </div><!-- /.container-fluid -->
+
+</nav>
+
