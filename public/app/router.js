@@ -143,9 +143,6 @@ define([
                 Backbone.history.navigate(href.attr, true);
             }
         });
-
-
-
     };
 
     var doAuthenticated = function(callback){

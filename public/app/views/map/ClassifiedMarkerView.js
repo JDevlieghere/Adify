@@ -37,7 +37,8 @@ define([
             });
 
             google.maps.event.addListener(this.marker, 'click', function () {
-                that.infobox.open(that.map, that.marker);
+                var id = that.model.attributes._id;
+                Backbone.history.navigate('cla/' + id, true);
             });
 
             google.maps.event.addListener(this.map, 'click', function(){
