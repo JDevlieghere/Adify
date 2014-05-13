@@ -31,8 +31,8 @@ var oauth = require('./oauth.js')
 
 // Passport Twitter Login
 passport.use(new TwitterStrategy({
-        clientID: oauth.twitter.clientID,
-        clientSecret: oauth.twitter.clientSecret,
+        consumerKey: oauth.twitter.consumerKey,
+        consumerSecret: oauth.twitter.consumerSecret,
         callbackURL: oauth.twitter.callbackURL
     },
     function(token, tokenSecret, profile, done) {
