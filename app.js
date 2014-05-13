@@ -27,9 +27,6 @@ var passport = require('passport'),
     TwitterStrategy = require('passport-twitter').Strategy,
     FacebookStrategy = require('passport-facebook').Strategy;
 
-// Analytics
-var analytics = require('analytics-node')('rf8hl2ta2o');
-
 // Passport Twitter Login
 passport.use(new TwitterStrategy({
         consumerKey: "Qs9JEJpB8WHtF6UWGddHQ",
