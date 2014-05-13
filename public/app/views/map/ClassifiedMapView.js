@@ -49,6 +49,9 @@ define([
 
         openClassifiedInfobox: function(id){
             var classMarkerView = this.classifiedMarkerViews[id];
+            analytics.track('Classified Infobox Opened', {
+                title: classMarkerView.model.attributes.title
+            });
             classMarkerView.openInfoBox();
         },
 

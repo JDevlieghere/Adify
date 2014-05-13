@@ -20,7 +20,7 @@ define([
 
         showSearchResult: function(){
             var id = this.model.attributes._id;
-            this.classifiedMapView.openClassifiedInfobox(id);
+            Backbone.history.navigate('cla/' + id, true);
         },
 
         render: function(){
