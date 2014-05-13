@@ -9,6 +9,7 @@
     "express-session": "*",
     "morgan": "*",
     "body-parser": "*",
+    "cookie-parser": "*",
     "ejs": "*",
     "mongodb": "*",
     "mongoskin": "*",

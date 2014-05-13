@@ -3,7 +3,7 @@ define([
     'backbone',
     'models/ClassifiedModel',
     'collections/ClassifiedCollection',
-    'text!/templates/my_classifieds.html'
+    'text!/tpl/my_classifieds.html'
 ], function(_, Backbone, ClassifiedModel, ClassifiedCollection, template){
 
 

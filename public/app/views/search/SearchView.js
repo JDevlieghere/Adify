@@ -5,7 +5,7 @@ define([
     'collections/ClassifiedCollection',
     'views/search/SearchItemView',
     'views/search/SearchPlaceItemView',
-    'text!/templates/search.html'
+    'text!/tpl/search.html'
 ], function ($, _, Backbone, ClassifiedCollection, SearchItemView, SearchPlaceItemView, template) {
 
     var SearchView = Backbone.View.extend({

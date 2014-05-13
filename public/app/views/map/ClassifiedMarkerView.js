@@ -2,7 +2,7 @@ define([
     'underscore',
     'backbone',
     'models/StarModel',
-    'text!/templates/mini_cla.html'
+    'text!/tpl/mini_cla.html'
 ], function(_, Backbone, StarModel,template) {
     var ClassifiedMarkerView = Backbone.View.extend({
 
