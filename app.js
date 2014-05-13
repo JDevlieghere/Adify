@@ -26,12 +26,14 @@ var star = require('./routes/star');
 var passport = require('passport'),
     TwitterStrategy = require('passport-twitter').Strategy,
     FacebookStrategy = require('passport-facebook').Strategy;
+var oauth = require('./oauth.js')
+
 
 // Passport Twitter Login
 passport.use(new TwitterStrategy({
-        consumerKey: "Qs9JEJpB8WHtF6UWGddHQ",
-        consumerSecret: "wtmUxnjghTbtpGeym90k2UfuJ105SXXFLNIaNyTeYSk",
-        callbackURL: "http://adify.be/auth/twitter/callback"
+        clientID: oauth.twitter.clientID,
+        clientSecret: oauth.twitter.clientSecret,
+        callbackURL: oauth.twitter.callbackURL
     },
     function(token, tokenSecret, profile, done) {
         user.findOrCreate(db, profile);
@@ -41,9 +43,9 @@ passport.use(new TwitterStrategy({
 
 // Passport Facebook Login
 passport.use(new FacebookStrategy({
-        clientID: "560819290683305",
-        clientSecret: "627d39f7ed36f5c06f734dfc3015324e",
-        callbackURL: "http://adify.be/auth/facebook/callback"
+        clientID: oauth.facebook.clientID,
+        clientSecret: oauth.facebook.clientSecret,
+        callbackURL: oauth.facebook.callbackURL
     },
     function(accessToken, refreshToken, profile, done) {
         user.findOrCreate(db, profile);
