@@ -22,6 +22,7 @@ define([
     var AppRouter = Backbone.Router.extend({
         routes: {
             "": "index",
+            "home": "redirect",
             "_=_": "redirect",
             "welcome": "welcome",
             "tos": "tos",

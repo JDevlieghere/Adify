@@ -51,7 +51,6 @@ define([
                     var path = "http://adify.be/uploads/thumbs/" + that.model.attributes.img;
                     $('.infoBox-' + that.model.attributes._id).css({'background-image': 'url(' + path + ')' });
                 }
-
             });
 
             this.render();
