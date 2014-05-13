@@ -116,9 +116,11 @@ define([
                 type: 'POST',
                 success: function(data) {
                     if(data.success){
+                        var imgUrl = 'http://adify.be/uploads/' + data.name;
                         $('#image-name').val(data.name);
-                        $('.cla-image').css({'background-image': 'url(http://adify.be/uploads/' + data.name + ')'});
+                        $('.cla-image').css({'background-image': 'url('+imgUrl+')'});
                         $('.upload-plus').fadeOut(200);
+                        console.log(imgUrl);
                     }else{
                         new Error('Unable to upload image.');
                     }
@@ -135,7 +137,6 @@ define([
 
         render: function(){
             var compiledTemplate = _.template(template);
-            this.$el.removeClass('hidden');
             this.$el.html(compiledTemplate);
 
             var lat = new google.maps.LatLng(50.87945, 4.7014);
