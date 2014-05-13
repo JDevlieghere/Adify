@@ -6,6 +6,7 @@ exports.index = function(req, res){
     var user;
     if(typeof req._passport.session.user != 'undefined') {
         user = req._passport.session.user._json;
+        console.log(user);
     }else{
         user = null;
     }

@@ -38,7 +38,7 @@
                 <li class="visible-xs"><a href="/create"><span class="glyphicon glyphicon-plus icon-nav"></span> Add Advertisement</a></li>
                 <li><a href="/me" id="me"><span class="glyphicon glyphicon-inbox icon-nav"></span> My Ads</a></li>
                 <li><a href="/starred" id="starred"><span class="glyphicon glyphicon-star icon-nav"></span> Starred Ads</a></li>
-                <% if(user != null) { %>
+                <% if(user) { %>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" id="user_name"><span class="glyphicon glyphicon-user icon-nav"></span> <%= user.name %><b class="caret"></b></a>
                     <ul class="dropdown-menu">

@@ -100,7 +100,6 @@ define([
         },
 
         openFileDialog: function(){
-            console.log('open file dialog');
             $('#upload').click();
         },
 
@@ -120,7 +119,6 @@ define([
                         $('#image-name').val(data.name);
                         $('.cla-image').css({'background-image': 'url('+imgUrl+')'});
                         $('.upload-plus').fadeOut(200);
-                        console.log(imgUrl);
                     }else{
                         new Error('Unable to upload image.');
                     }
