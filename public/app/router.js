@@ -3,6 +3,7 @@ define([
     'backbone',
     'views/HomeView',
     'views/AnnouncementView',
+    'views/TosView',
     'views/my/MyClassifiedsView',
     'views/star/StarredClassifiedsView',
     'views/CreateClassifiedView',
@@ -14,7 +15,7 @@ define([
     'collections/MyClassifiedsCollection',
     'collections/StarCollection',
     'session'
-],function(_, Backbone, HomeView, AnnouncementView, MyClassifiedsView, StarredClassifiedsView,
+],function(_, Backbone, HomeView, AnnouncementView, TosView, MyClassifiedsView, StarredClassifiedsView,
            CreateClassifiedView, ClassifiedMapView,SearchView, ProfileView, UserModel, ClassifiedCollection, MyClassifiedsCollection, StarCollection, Session) {
     "use strict";
 
@@ -23,10 +24,12 @@ define([
             "": "index",
             "_=_": "redirect",
             "welcome": "welcome",
+            "tos": "tos",
             "create": "createClassified",
             "me": "myClassifieds",
             "starred": "starredClassifieds",
-            "profile": "profile"
+            "profile": "profile",
+            "cla/:id": "showClassified"
         }
     });
 
@@ -114,6 +117,15 @@ define([
                 var profileView = new ProfileView({userModel: userModel});
                 showView(profileView);
             });
+        });
+
+        app_router.on('route:tos', function(){
+            var tosView = new TosView();
+            showView(tosView);
+        });
+
+        app_router.on('route:showClassified', function(id){
+            classifiedMapView.openClassifiedInfobox(id);
         });
 
         var searchView = new SearchView({classifiedCollection: classifiedCollection});

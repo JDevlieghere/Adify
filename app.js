@@ -92,7 +92,10 @@ app.get('/me', routes.index);
 app.get('/_=_', routes.index);
 app.get('/starred', routes.index);
 app.get('/welcome', routes.index);
+app.get('/tos', routes.index);
 app.get('/profile', routes.index);
+app.get('/cla/:id', routes.index);
+
 
 /*
  * Authentication Routes
