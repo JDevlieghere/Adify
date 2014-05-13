@@ -44,15 +44,19 @@ define([
 
             this.classifiedMarkerViews = {};
 
-
         },
 
         openClassifiedInfobox: function(id){
             var classMarkerView = this.classifiedMarkerViews[id];
-            analytics.track('Classified Infobox Opened', {
-                title: classMarkerView.model.attributes.title
-            });
-            classMarkerView.openInfoBox();
+            if(classMarkerView){
+                analytics.track('Classified Infobox Opened', {
+                    title: classMarkerView.model.attributes.title
+                });
+                classMarkerView.openInfoBox();
+                this.queued = null;
+            }else{
+                this.queued = id;
+            }
         },
 
         panToLocation: function(query){
@@ -133,6 +137,9 @@ define([
 
 
             });
+            if(this.queued){
+                this.openClassifiedInfobox(this.queued);
+            }
         }
     });
 

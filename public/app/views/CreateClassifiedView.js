@@ -155,37 +155,34 @@ define([
 
             var that = this;
 
-//            this.$('.cla-image').bind('click',function(event){
-//               that.openFileDialog();
-//               event.stopPropagation();
-//            });
-//
-//            this.$('#look-up').bind('click',function(event){
-//                that.lookupAddress();
-//                event.stopPropagation();
-//            });
-//
-//            this.$('#btn-user-contact').bind('click',function(event){
-//                that.fillInContact();
-//                event.stopPropagation();
-//            });
-//
-//            this.$('#btn-user-addr').bind('click',function(event){
-//                that.fillInAddr();
-//                event.stopPropagation();
-//            });
-//
-//
-//            this.$('#btn-create').bind('click',function(event){
-//                that.createClassified(event, that);
-//                event.stopPropagation();
-//            });
+            this.$('.cla-image').bind('click',function(event){
+               that.openFileDialog();
+               event.stopPropagation();
+            });
 
-            var contentbox = this.$('.contentbox')
-            contentbox.bind('click', function(event){
-                event.target.trigger("click");
-                if(event.currentTarget == contentbox)
-                    event.stopPropagation();
+            this.$('#look-up').bind('click',function(event){
+                that.lookupAddress();
+                event.stopPropagation();
+            });
+
+            this.$('#btn-user-contact').bind('click',function(event){
+                that.fillInContact();
+                event.stopPropagation();
+            });
+
+            this.$('#btn-user-addr').bind('click',function(event){
+                that.fillInAddr();
+                event.stopPropagation();
+            });
+
+
+            this.$('#btn-create').bind('click',function(event){
+                that.createClassified(event, that);
+                event.stopPropagation();
+            });
+
+            this.$('.contentbox').bind('click', function(event){
+                event.stopPropagation();
             });
 
 
