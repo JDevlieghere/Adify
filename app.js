@@ -96,7 +96,6 @@ app.get('/tos', routes.index);
 app.get('/profile', routes.index);
 app.get('/cla/:id', routes.index);
 
-
 /*
  * Authentication Routes
  */
