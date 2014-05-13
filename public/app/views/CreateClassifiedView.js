@@ -181,9 +181,11 @@ define([
 //                event.stopPropagation();
 //            });
 
-            this.$('.contentbox').bind('click', function(event){
+            var contentbox = this.$('.contentbox')
+            contentbox.bind('click', function(event){
                 event.target.trigger("click");
-                event.stopPropagation();
+                if(event.currentTarget == contentbox)
+                    event.stopPropagation();
             });
 
 
