@@ -82,17 +82,20 @@ define([
         });
 
         app_router.on('route:index', function(){
+            analytics.page('Index');
             var homeView = new HomeView();
             showView(homeView);
         });
 
         app_router.on('route:welcome', function(){
+            analytics.page('Welcome');
             var announcementView = new AnnouncementView();
             showView(announcementView);
         });
 
         app_router.on('route:createClassified', function(){
             doAuthenticated(function(){
+                analytics.page('Create Classified');
                 var createClassifiedView = new CreateClassifiedView({userModel: userModel, classifiedCollection: classifiedCollection});
                 showView(createClassifiedView);
             });
@@ -100,6 +103,7 @@ define([
 
         app_router.on('route:myClassifieds', function(){
             doAuthenticated(function(){
+                analytics.page('My Classifieds');
                 var myClassifiedsView = new MyClassifiedsView();
                 showView(myClassifiedsView);
             });
@@ -107,6 +111,7 @@ define([
 
         app_router.on('route:starredClassifieds', function(){
             doAuthenticated(function() {
+                analytics.page('Starred Classifieds');
                 var starredClassifiedsView = new StarredClassifiedsView({starCollection: starCollection});
                 showView(starredClassifiedsView);
             });
@@ -114,23 +119,25 @@ define([
 
         app_router.on('route:profile', function(){
             doAuthenticated(function() {
+                analytics.page('Profile');
                 var profileView = new ProfileView({userModel: userModel});
                 showView(profileView);
             });
         });
 
         app_router.on('route:tos', function(){
+            analytics.page('Terms of Service');
             var tosView = new TosView();
             showView(tosView);
         });
 
         app_router.on('route:showClassified', function(id){
+            analytics.page('Show Classified');
             classifiedMapView.openClassifiedInfobox(id);
         });
 
         var searchView = new SearchView({classifiedCollection: classifiedCollection});
         searchView.setClassifiedMapView(classifiedMapView);
-
 
         Backbone.history.start({ pushState: true, root: '/' });
 
