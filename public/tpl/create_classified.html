@@ -62,7 +62,7 @@
                         <div class="input-group margin-15-bottom">
                             <!--<div class="col-md-12"> -->
                         <span class="input-group-btn">
-                            <button class="btn btn-success" type="button" id="btn-user-contact"><span
+                            <button class="btn btn-success" type="button" id="btn-user-contact" onclick="analytics.track('Button Clicked', {action  : 'Complete Contact Info'});"><span
                                     class="glyphicon glyphicon-user"></span></button>
                     </span>
                             <input type="text" class="form-control" placeholder="Contactinformation (email, phone...)"
@@ -81,13 +81,13 @@
                         <div class="input-group margin-15-bottom">
                             <!--<div class="col-md-12"> -->
                                         <span class="input-group-btn">
-                                            <button class="btn btn-success" type="button" id="btn-user-addr"><span
+                                            <button class="btn btn-success" type="button" id="btn-user-addr"  onclick="analytics.track('Button Clicked', {action  : 'Complete Address'});"><span
                                                     class="glyphicon glyphicon-user"></span></button>
                     </span>
                             <input type="text" class="form-control" id="user-addr" placeholder="Type your address">
                             <!--</div><!-- col-md-12 -->
                     <span class="input-group-btn">
-                    <button class="btn btn-success" type="button" id="look-up"><span
+                    <button class="btn btn-success" type="button" id="look-up" onclick="analytics.track('Button Clicked', {action  : 'Address Lookup'});"><span
                             class="glyphicon glyphicon-search"></span></button>
                     </span>
                         </div>

@@ -31,24 +31,23 @@
                 <button type="submit" class="btn btn-success">
                     <span class="glyphicon glyphicon-search"></span>
                 </button>
-
             </form>
             <!-- search -->
 			<ul class="nav navbar-nav navbar-right" >
                 <li class="visible-xs"><a href="/create"><span class="glyphicon glyphicon-plus icon-nav"></span> Add Advertisement</a></li>
-                <li><a href="/me" id="me"><span class="glyphicon glyphicon-inbox icon-nav"></span> My Ads</a></li>
-                <li><a href="/starred" id="starred"><span class="glyphicon glyphicon-star icon-nav"></span> Starred Ads</a></li>
+                <li><a href="/me" id="me" onclick="analytics.track('Link Clicked', {action  : 'My Ads'});"><span class="glyphicon glyphicon-inbox icon-nav"></span> My Ads</a></li>
+                <li><a href="/starred" id="starred" onclick="analytics.track('Link Clicked', {action  : 'Starred Ads'});"><span class="glyphicon glyphicon-star icon-nav"></span> Starred Ads</a></li>
                 <% if(user) { %>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" id="user_name"><span class="glyphicon glyphicon-user icon-nav"></span> <%= user.name %><b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/profile" id="profile"> My Profile </a></li>
+                        <li><a href="/profile" id="profile"  onclick="analytics.track('Link Clicked', {action  : 'My Profile'});"> My Profile </a></li>
                         <li class="divider"></li>
-                        <li><a href="/logout"  data-bypass="true" id="logout">Logout</a></li>
+                        <li><a href="/logout"  data-bypass="true" id="logout"  onclick="analytics.track('Link Clicked', {action  : 'Logout'});">Logout</a></li>
                     </ul>
                 </li>
                 <% } else { %>
-                <li><a href="/welcome"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                <li><a href="/welcome" onclick="analytics.track('Link Clicked', {action  : 'Login'});"><span class="glyphicon glyphicon-user"></span> Login</a></li>
                 <% } %>
             </ul><!-- nav navbar-nav navbar-right -->
 
