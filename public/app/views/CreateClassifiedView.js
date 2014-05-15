@@ -46,6 +46,7 @@ define([
                         that.classifiedCollection.add(model);
                         that.close();
                         analytics.track('Classified Created', data);
+                        that.classifiedCollection.fetch();
                     },
                     error: function(error){
                         Error(error);
