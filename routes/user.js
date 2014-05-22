@@ -15,7 +15,7 @@ exports.me = function(db){
     return function(req, res){
         if(req._passport.session.user){
             var user = req._passport.session.user._json.id.toString();
-            db.collection('profiles').findOne({_id: user}, function(err, item) {
+            db.collection('profiles').findOne({user_id: user}, function(err, item) {
                 if(err) {
                     res.send(404);
                 }else{
