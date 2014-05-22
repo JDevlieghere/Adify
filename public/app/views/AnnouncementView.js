@@ -26,8 +26,8 @@ define([
 
             this.$('.contentbox').bind('click', function(event){
                 console.log(event.target);
-                console.log($(event.target) === $('#close-a'));
-                if($(event.target) === $('#close-a')){
+                console.log($(event.target).attr('id') =='close-a');
+                if($(event.target).attr('id') =='close-a'){
                     that.close();
                 }
                 event.stopPropagation();
