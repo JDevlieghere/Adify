@@ -112,9 +112,10 @@ define([
 
             this.infobox.content = this.el;
 
-//            this.$('.mini-cla-leftbutton').bind('click', function(){
-//                that.showMore();
-//            });
+            this.$('.close-button').bind('click', function(){
+                that.close();
+                console.log("Close dialog clicked");
+            });
             this.$('.mini-cla-leftbutton').bind('click', function(){
                 that.marker.setIcon('http://adify.be/img/markers/ad_starred.png');
                 that.star();
