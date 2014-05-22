@@ -22,9 +22,12 @@ define([
             this.collection = options.classifiedCollection;
 
             var that = this;
-            $('#global-search').bind('keyup', function () {
+            $('#global-search').bind('keyup', function (e) {
+                console.log(e.keyCode);
                 that.search();
             });
+
+
 
 
             this.results = [];
