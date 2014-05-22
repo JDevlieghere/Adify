@@ -10,7 +10,7 @@ exports.get = function(db){
 
 exports.post = function(db){
     return function(req,res){
-        console.log("Start starring");
+        var user_id = req._passport.session.user._json.id.toString();
         var json ={
           'cla_id': req.body.cla_id,
           'user_id': req.body.user_id,
