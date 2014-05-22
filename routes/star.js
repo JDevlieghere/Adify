@@ -2,6 +2,7 @@ exports.get = function(db){
     return function(req, res){
         var user_id = req._passport.session.user._json.id.toString();
         db.collection('stars').find({user_id: user_id}).toArray(function (err, items) {
+            console.log(items);
             res.json(items);
         });
     }
