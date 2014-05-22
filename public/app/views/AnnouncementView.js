@@ -26,6 +26,7 @@ define([
 
             this.$('.contentbox').bind('click', function(event){
                 console.log(event.target);
+                console.log($(event.target) === $('#close-a'));
                 if($(event.target) === $('#close-a')){
                     that.close();
                 }
