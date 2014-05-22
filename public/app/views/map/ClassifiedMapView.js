@@ -106,7 +106,6 @@ define([
             }
 
             var that = this;
-            console.log("number of ads:" + this.collection.length);
             this.collection.each(function(classified){
                 var id = classified.attributes._id;
                 // make sure that each marker is only added once.
@@ -124,7 +123,7 @@ define([
                     classifiedMarkerView = that.classifiedMarkerViews[id];
                 }
 
-                if(that.userModel.get('_id')){
+                if(that.userModel){
                     console.log('classified');
                     console.log(classified);
                     var result = _.find(that.starCollection.models, function(model){
