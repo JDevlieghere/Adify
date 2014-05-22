@@ -37,7 +37,8 @@ define([
 
     var initialize = function(){
 
-        Backbone.View.prototype.close = function(){
+        Backbone.View.prototype.close = function(event){
+            console.log(target);
         //this.$el.fadeOut(200, function(){
             this.unbind();
             this.stopListening();
