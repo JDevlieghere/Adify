@@ -16,8 +16,6 @@ exports.post = function(db){
           'user_id': user_id,
           'title': req.body.title
         };
-
-        console.log(json);
         db.collection('stars').insert(json, function(err) {
             if (err) {
                 res.send(500);

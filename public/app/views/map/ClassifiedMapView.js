@@ -124,6 +124,7 @@ define([
                     classifiedMarkerView = that.classifiedMarkerViews[id];
                 }
 
+                console.log(userModel);
                 if(that.userModel.get('_id')){
                     var result = _.find(that.starCollection.models, function(model){
                         return model.get('cla_id') == classified.get('_id');
