@@ -138,9 +138,8 @@ define([
         });
 
         app_router.on('route:close',function(){
-            currentView.undelegateEvents();
-            currentView.$el.empty();
-        })
+            currentView.close();
+        });
 
         var searchView = new SearchView({classifiedCollection: classifiedCollection});
         searchView.setClassifiedMapView(classifiedMapView);
