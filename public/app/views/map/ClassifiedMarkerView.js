@@ -129,7 +129,7 @@ define([
 //            this.$('.mini-cla-rightbutton').bind('click',function(){
 //                that.close();
 //            });
-//        },
+        },
 
         remove: function () {
             this.marker.setMap(null);
