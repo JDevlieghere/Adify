@@ -11,7 +11,6 @@ define([
 
         events:{
             'click #overlay' : 'close',
-            'click #close-a' : 'close'
         },
 
         render: function(){
@@ -21,9 +20,16 @@ define([
 
             var that = this;
 
+            this.$('.close-a').bind('click', function(event){
+
+            });
+
             this.$('.contentbox').bind('click', function(event){
+                console.log(event.target);
                 event.stopPropagation();
             });
+
+
 
         }
     });
