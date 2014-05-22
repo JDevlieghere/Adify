@@ -76,6 +76,7 @@ exports.put = function(db, helper){
 
 exports.findByMe = function(db){
     return function(req, res){
+        console.log("Find all my advertisements");
         var owner = req._passport.session.user._json.id;
         db.collection('advertisements').find({'owner': owner}).toArray(function (err, items) {
             res.json(items);
