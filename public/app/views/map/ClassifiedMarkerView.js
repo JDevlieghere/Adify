@@ -96,7 +96,10 @@ define([
         },
 
         close: function(event){
+            console.log(event.target);
             var id = $(event.target).data('id');
+            console.log(id);
+            console.log(this.model.get("_id"));
             if(id == this.model.get("_id")){
                 this.infobox.close();
             }
