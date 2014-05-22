@@ -37,17 +37,12 @@ define([
 
     var initialize = function(){
 
-        Backbone.View.prototype.close = function(event){
-            console.log(target);
-        //this.$el.fadeOut(200, function(){
+        Backbone.View.prototype.close = function(){
             this.unbind();
             this.stopListening();
             this.undelegateEvents();
             this.$el.empty();
             Backbone.history.navigate('/', true);
-        //});
-
-
         };
         
         var  userModel = new UserModel;

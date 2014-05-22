@@ -10,7 +10,8 @@ define([
         el: $("#view"),
 
         events:{
-            'click #overlay' : 'close'
+            'click #overlay' : 'close',
+            'click #close-a' : 'close2'
         },
 
         render: function(){
@@ -24,6 +25,12 @@ define([
                 event.stopPropagation();
             });
 
+        },
+
+
+        close2: function(event){
+            console.log(event.target);
+            this.close();
         }
     });
 
