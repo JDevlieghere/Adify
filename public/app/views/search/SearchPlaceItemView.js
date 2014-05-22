@@ -13,6 +13,7 @@ define([
         initialize: function(options){
             this.classifiedMapView = options.classifiedMapView;
             this.title = options.title;
+            this.searchView = options.searchView;
         },
 
         events: {
@@ -20,6 +21,7 @@ define([
         },
 
         showSearchResult: function(){
+            this.searchView.closeSearchResult();
             this.classifiedMapView.panToLocation(this.title);
         },
 

@@ -40,7 +40,6 @@ define([
 
         closeSearchResult: function(){
             this.$el.html("");
-            $("#global-search").val("");
         },
 
         setClassifiedMapView: function(classifiedMapView){
@@ -96,7 +95,8 @@ define([
                     var searchItemView = new SearchItemView(
                         {
                             model: classified,
-                            classifiedMapView: this.classifiedMapView
+                            classifiedMapView: this.classifiedMapView,
+                            searchView: this
                         });
 
                     this.$('.search-result-list.cla-result').append(searchItemView.render().el);
