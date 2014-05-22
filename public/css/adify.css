@@ -429,6 +429,16 @@ textarea{
     text-decoration: none;
 }
 
+#close-a{
+    color: #8cc970;
+}
+
+
+#close-a:hover{
+    cursor: pointer;
+    color:#7DAE69;
+}
+
 
 .mini-cla-leftbutton, .mini-cla-middlebutton, .mini-cla-rightbutton, .mini-cla-button{
     border: 2px solid white;
