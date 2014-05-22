@@ -95,11 +95,11 @@ define([
 
         },
 
-        close: function(){
-            this.infobox.close();
-        },
-
-        showMore: function(){
+        close: function(event){
+            var id = $(event.target).data('id');
+            if(id == this.model.get("_id")){
+                this.infobox.close();
+            }
 
         },
 
