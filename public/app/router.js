@@ -30,7 +30,6 @@ define([
             "starred": "starredClassifieds",
             "profile": "profile",
             "cla/:id": "showClassified",
-            "close": "close"
         }
     });
 
@@ -137,9 +136,6 @@ define([
             classifiedMapView.openClassifiedInfobox(id);
         });
 
-        app_router.on('route:close',function(){
-            currentView.close();
-        });
 
         var searchView = new SearchView({classifiedCollection: classifiedCollection});
         searchView.setClassifiedMapView(classifiedMapView);

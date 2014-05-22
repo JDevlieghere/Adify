@@ -11,7 +11,7 @@ define([
 
         events:{
             'click #overlay' : 'close',
-            'click .close-dialog': 'close'
+            'click .close-a': 'close'
         },
 
         render: function(){
