@@ -75,7 +75,7 @@ app.set('view engine', 'ejs');
 app.use(cookieParser('mysecretstring'));
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(session({ secret: 'TERCES' }));
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
