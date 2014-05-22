@@ -21,8 +21,10 @@ define([
         },
 
         showSearchResult: function(){
-            this.searchView.closeSearchResult();
+
             this.classifiedMapView.panToLocation(this.title);
+            this.searchView.closeSearchResult();
+            console.log("close searchresults");
         },
 
         render: function(){
