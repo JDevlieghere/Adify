@@ -23,7 +23,9 @@ define([
 
             var that = this;
             $('#global-search').bind('keyup', function (e) {
-                console.log(e.keyCode);
+                if(e.keycode == 13){
+                    alert('enter pressed');
+                }
                 that.search();
             });
 
