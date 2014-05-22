@@ -8,6 +8,12 @@ define([
 
         tagname: 'div',
 
+        events:{
+            'click .close-button': 'close',
+            'click .mini-cla-button': 'star'
+        },
+
+
         initialize: function (options) {
 
             var that = this;
@@ -112,18 +118,18 @@ define([
 
             this.infobox.content = this.el;
 
-            this.$('.close-button').bind('click', function(){
-                that.close();
-                console.log("Close dialog clicked");
-            });
-            this.$('.mini-cla-leftbutton').bind('click', function(){
-                that.marker.setIcon('http://adify.be/img/markers/ad_starred.png');
-                that.star();
-            });
-            this.$('.mini-cla-rightbutton').bind('click',function(){
-                that.close();
-            });
-        },
+//            this.$('.close-button').bind('click', function(){
+//                that.close();
+//                console.log("Close dialog clicked");
+//            });
+//            this.$('.mini-cla-leftbutton').bind('click', function(){
+//                that.marker.setIcon('http://adify.be/img/markers/ad_starred.png');
+//                that.star();
+//            });
+//            this.$('.mini-cla-rightbutton').bind('click',function(){
+//                that.close();
+//            });
+//        },
 
         remove: function () {
             this.marker.setMap(null);

@@ -429,7 +429,7 @@ textarea{
 }
 
 
-.mini-cla-leftbutton, .mini-cla-middlebutton, .mini-cla-rightbutton{
+.mini-cla-leftbutton, .mini-cla-middlebutton, .mini-cla-rightbutton, mini-cla-button{
     border: 2px solid white;
     background-color: rgba(0,0,0,0.5);
     width: 125px;
@@ -437,6 +437,11 @@ textarea{
     padding-left:25px;
     padding-right: 25px;
     margin: 0;
+}
+
+.mini-cla-button{
+    width: 100%;
+    border-radius: 6px;
 }
 
 .mini-cla-leftbutton{
