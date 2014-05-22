@@ -22,10 +22,11 @@ define([
             this.collection = options.classifiedCollection;
 
             var that = this;
+
+            // prevent page reload when enter key is pressed.
+            $('#global-search').submit(function(){ return false;});
             $('#global-search').bind('keyup', function (e) {
-                if(e.keycode == 13){
-                    alert('enter pressed');
-                }
+                if(e.keyCode == 13) alert("Enter pressed");
                 that.search();
             });
 
