@@ -13,7 +13,7 @@ exports.post = function(db){
         var user_id = req._passport.session.user._json.id.toString();
         var json ={
           'cla_id': req.body.cla_id,
-          'user_id': req.body.user_id,
+          'user_id': user_id,
           'title': req.body.title
         };
 
