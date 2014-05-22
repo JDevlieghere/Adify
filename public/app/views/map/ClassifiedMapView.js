@@ -124,8 +124,6 @@ define([
                 }
 
                 if(that.userModel){
-                    console.log('classified');
-                    console.log(classified);
                     var result = _.find(that.starCollection.models, function(model){
                         return model.get('cla_id') == classified.get('_id');
                     });
