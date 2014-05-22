@@ -138,8 +138,6 @@ define([
         });
 
         app_router.on('route:close',function(){
-            currentView.unbind();
-            currentView.stopListening();
             currentView.undelegateEvents();
             currentView.$el.empty();
         })
