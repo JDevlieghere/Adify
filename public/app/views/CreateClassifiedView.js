@@ -183,6 +183,9 @@ define([
             });
 
             this.$('.contentbox').bind('click', function(event){
+                if($(event.target).attr('id') =='close-a'){
+                    that.close();
+                }
                 event.stopPropagation();
             });
 

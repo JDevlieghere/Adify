@@ -10,7 +10,7 @@ define([
         el: $("#view"),
 
         events:{
-            'click #overlay' : 'close',
+            'click #overlay' : 'close'
         },
 
         render: function(){
@@ -25,8 +25,6 @@ define([
             });
 
             this.$('.contentbox').bind('click', function(event){
-                console.log(event.target);
-                console.log($(event.target).attr('id') =='close-a');
                 if($(event.target).attr('id') =='close-a'){
                     that.close();
                 }
