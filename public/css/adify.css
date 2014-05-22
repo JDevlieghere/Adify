@@ -21,6 +21,12 @@ a:hover {
     cursor: pointer;
 }
 
+
+.close-button{
+    position:absolute;
+    top: 5px;
+    right: 5px;
+}
 #terms{
     border-radius: 6px;
     background-color: #8cc970;
