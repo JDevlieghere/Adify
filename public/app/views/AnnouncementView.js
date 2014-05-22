@@ -10,8 +10,7 @@ define([
         el: $("#view"),
 
         events:{
-            'click #overlay' : 'close',
-            'click .close-a': 'close'
+            'click #overlay' : 'close'
         },
 
         render: function(){

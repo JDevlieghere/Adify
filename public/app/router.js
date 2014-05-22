@@ -29,8 +29,7 @@ define([
             "me": "myClassifieds",
             "starred": "starredClassifieds",
             "profile": "profile",
-            "cla/:id": "showClassified",
-            "close": "close"
+            "cla/:id": "showClassified"
         }
     });
 
