@@ -11,7 +11,7 @@ define([
 
         events:{
             'click #overlay' : 'close',
-            'click #close-a' : 'close2'
+            'click #close-a' : 'close'
         },
 
         render: function(){
@@ -25,12 +25,6 @@ define([
                 event.stopPropagation();
             });
 
-        },
-
-
-        close2: function(event){
-            console.log(event.target);
-            this.close();
         }
     });
 
