@@ -106,6 +106,7 @@ define([
             var id = $(event.target).data('id');
             if(id == this.model.get("_id")){
                 this.infobox.close();
+                event.stopPropagation();
             }
 
         },

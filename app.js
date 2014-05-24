@@ -14,6 +14,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var morgan  = require('morgan');
 var formidable = require('formidable');
+var mail = require('nodemailer').mail;
 
 // Routes
 var routes = require('./routes');
@@ -117,7 +118,7 @@ app.get('/auth/facebook/callback',
         successRedirect: '/',
         failureRedirect: '/auth/facebook' }));
 
-app.post('api/message', message.send());
+app.post('/api/message', message.send(mail));
 /*
  *  REST API Routes
  */

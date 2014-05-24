@@ -3,25 +3,44 @@ define([
     'underscore',
     'backbone',
     'models/ClassifiedModel',
+    'models/MessageModel',
     'text!/tpl/send_email.html'
-], function($, _, Backbone,ClassifiedModel, template){
+], function($, _, Backbone,ClassifiedModel, MessageModel, template){
 
     var SendEmailView = Backbone.View.extend({
 
         el: $("#view"),
 
         events: {
+            'submit form': 'send'
         },
 
         initialize: function(options){
            this.classifiedModel =  options.classifiedModel;
             this.render();
 
+            this.classifiedModel.on('sync', this.render, this);
+
         },
 
 
 
+        send: function(event){
+            event.preventDefault();
+            var email = this.$('#message-contact').val();
+            var subject = this.$('#message-subject').val();
+            var text = this.$('#message-content').val();
+            var email2 = "stefanpante@outlook.com";
+            console.log('send email');
+            var messageModel = new MessageModel({
+                email: email,
+                email2: email,
+                subject: subject,
+                text: text
+            });
 
+            messageModel.save();
+        },
 
         render: function(){
             var compiledTemplate = _.template(template);
@@ -48,6 +67,10 @@ define([
                 console.log('overlay clicked');
                 that.close();
             });
+
+            this.$('#btn-send').bind('click', function(){
+                that.send();
+            })
         }
     });
 

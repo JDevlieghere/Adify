@@ -17,6 +17,7 @@
     "passport-twitter": "*",
     "passport-facebook": "*",
     "formidable": "*",
-    "gm": "*"
+    "gm": "*",
+    "nodemailer": "*"
   }
 }

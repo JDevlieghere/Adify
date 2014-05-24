@@ -137,9 +137,9 @@ define([
 
 
         app_router.on('route:contactAdvertiser', function(id){
-
+        var model = classifiedCollection.get(id);
            var sendEmailView = new SendEmailView({
-                   classifiedId: id
+                   model: model
                });
            showView(sendEmailView);
         });
