@@ -10,32 +10,17 @@
             <%= description %>
         </div>
     </div>
-
-    <div class="row">
-
-        <div class="col-md-5">
-            <span class="glyphicon glyphicon-user"></span>
-            <%= user %>
-
-        </div>
-
-        <div class="col-md-7 ">
-
-            <span class="glyphicon glyphicon-earphone"></span>
-            <%= contact %>
-
-        </div>
-    </div>
-
     <div class="row center">
         <div class="mini-cla-buttons col-md-12">
-            <!--//<a href="#" class="mini-cla-leftbutton"><span class="glyphicon glyphicon-arrow-up"></span> more</a> -->
-            <a href="#" class="mini-cla-button">
+            <a href="#" class="mini-cla-leftbutton">
                 <% if(starred){ %>
                 <span class="glyphicon glyphicon-star-empty"></span> unstar
                 <% }else{ %>
                 <span class="glyphicon glyphicon-star"></span> star
                 <%}%></a>
+            <a href="#" class="mini-cla-rightbutton">
+                <span class="glyphicon glyphicon-envelope"></span> Contact Advertiser
+            </a>
         </div>
 
     </div>

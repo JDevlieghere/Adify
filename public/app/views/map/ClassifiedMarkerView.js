@@ -2,15 +2,17 @@ define([
     'underscore',
     'backbone',
     'models/StarModel',
+    'views/SendEmailView',
     'text!/tpl/mini_cla.html'
-], function(_, Backbone, StarModel,template) {
+], function(_, Backbone, StarModel, SendEmailView,template) {
     var ClassifiedMarkerView = Backbone.View.extend({
 
         tagname: 'div',
 
         events:{
             'click .close-button': 'close',
-            'click .mini-cla-button': 'star'
+            'click .mini-cla-leftbutton': 'star',
+            'click .mini-cla-rightbutton': 'contactAdvertiser'
         },
 
 
@@ -47,8 +49,8 @@ define([
                 Backbone.history.navigate('cla/' + id, true);
             });
 
-            google.maps.event.addListener(this.map, 'click', function(){
-                that.close();
+            google.maps.event.addListener(this.map, 'click', function(event){
+                that.closeAll(event);
             });
 
             var that = this;
@@ -65,6 +67,11 @@ define([
 
         },
 
+
+        contactAdvertiser: function(){
+            var sendEmailView = new SendEmailView({classifiedModel: this.model});
+            sendEmailView.render();
+        },
         setStarred: function(starred){
             this.starred = starred;
             if(starred){
@@ -96,14 +103,15 @@ define([
         },
 
         close: function(event){
-            console.log(event.target);
             var id = $(event.target).data('id');
-            console.log(id);
-            console.log(this.model.get("_id"));
             if(id == this.model.get("_id")){
                 this.infobox.close();
             }
 
+        },
+
+        closeAll: function(event){
+            this.infobox.close();
         },
 
         openInfoBox: function(){

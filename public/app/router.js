@@ -9,6 +9,7 @@ define([
     'views/CreateClassifiedView',
     'views/map/ClassifiedMapView',
     'views/search/SearchView',
+    'views/SendEmailView',
     'views/ProfileView',
     'models/UserModel',
     'collections/ClassifiedCollection',
@@ -16,7 +17,8 @@ define([
     'collections/StarCollection',
     'session'
 ],function(_, Backbone, HomeView, AnnouncementView, TosView, MyClassifiedsView, StarredClassifiedsView,
-           CreateClassifiedView, ClassifiedMapView,SearchView, ProfileView, UserModel, ClassifiedCollection, MyClassifiedsCollection, StarCollection, Session) {
+           CreateClassifiedView, ClassifiedMapView,SearchView, SendEmailView,ProfileView, UserModel,
+           ClassifiedCollection, MyClassifiedsCollection, StarCollection, Session) {
     "use strict";
 
     var AppRouter = Backbone.Router.extend({
@@ -29,7 +31,8 @@ define([
             "me": "myClassifieds",
             "starred": "starredClassifieds",
             "profile": "profile",
-            "cla/:id": "showClassified"
+            "cla/:id": "showClassified",
+            "contactAdvertiser/:id" : "contactAdvertiser"
         }
     });
 
@@ -132,9 +135,13 @@ define([
             classifiedMapView.openClassifiedInfobox(id);
         });
 
-        app_router.on('route:close', function(id){
-            var homeView = new HomeView();
-            showView(homeView);
+
+        app_router.on('route:contactAdvertiser', function(id){
+
+           var sendEmailView = new SendEmailView({
+                   classifiedId: id
+               });
+           showView(sendEmailView);
         });
 
 

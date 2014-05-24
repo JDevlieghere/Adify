@@ -10,6 +10,16 @@ exports.get = function(db){
     }
 };
 
+
+exports.getOne =function(db, helper){
+  return function(req,res){
+   var id = req.params.id;
+      db.collection('advertisements').findOne({'_id': helper.toObjectID(id)}, function(err, item){
+           res.json(item);
+      });
+  };
+};
+
 exports.post = function(db){
     return function(req, res){
         var advertisement = {

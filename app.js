@@ -21,6 +21,7 @@ var user = require('./routes/user');
 var image = require('./routes/image');
 var advertisement = require('./routes/advertisement');
 var star = require('./routes/star');
+var message = require('./routes/message');
 
 // Passport
 var passport = require('passport'),
@@ -98,6 +99,7 @@ app.get('/tos', routes.index);
 app.get('/profile', routes.index);
 app.get('/cla/:id', routes.index);
 app.get('/close', routes.index);
+app.get('/contactAdvertiser/:id', routes.index);
 /*
  * Authentication Routes
  */
@@ -115,11 +117,13 @@ app.get('/auth/facebook/callback',
         successRedirect: '/',
         failureRedirect: '/auth/facebook' }));
 
+app.post('api/message', message.send());
 /*
  *  REST API Routes
  */
 app.get('/api/classifieds', advertisement.get(db));
 app.post('/api/classifieds', auth, advertisement.post(db));
+app.get('/api/classifieds/:id', advertisement.getOne(db,helper));
 app.put('/api/classifieds/:id', auth, advertisement.put(db, helper));
 app.delete('/api/classifieds/:id', auth, advertisement.delete(db, helper));
 
